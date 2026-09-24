@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The 7-Round Rule: When to Stop Arguing With Yourself — Sunwoo Park</title>
+<meta name="description" content="Red-teaming has a failure mode nobody warns you about: no natural stopping point. Seven rounds max, each attacking a different failure mode. Then freeze the design, write down the reversal condition, and go touch real data.">
+<style>
+:root{
+  --bg:#141210; --bg2:#1c1917; --ink:#ece7de; --muted:#a8a094;
+  --blue:#3f8cff; --amber:#e8a33d; --line:#2c2823;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);
+  font-family:Georgia,'Times New Roman',Charter,serif;line-height:1.75;
+  font-size:18px}
+.wrap{max-width:700px;margin:0 auto;padding:0 24px}
+header.site{border-bottom:1px solid var(--line);padding:28px 0}
+header.site .brand{font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;
+  font-weight:800;letter-spacing:3px;font-size:14px;color:var(--ink);
+  text-decoration:none}
+header.site .brand .dot{display:inline-block;width:9px;height:9px;border-radius:50%;
+  background:var(--amber);margin-right:10px}
+header.site .tag{color:var(--muted);font-size:14px;margin-top:6px;
+  font-family:-apple-system,'Helvetica Neue',Arial,sans-serif}
+.hero{padding:56px 0 40px}
+.hero h1{font-size:clamp(34px,6vw,52px);line-height:1.15;letter-spacing:-.5px}
+.hero h1 .acc{color:var(--amber)}
+.hero p{color:var(--muted);margin-top:14px;font-size:17px}
+.post-card{display:block;text-decoration:none;color:inherit;border:1px solid var(--line);
+  border-radius:14px;overflow:hidden;margin-bottom:28px;background:var(--bg2);
+  transition:border-color .2s}
+.post-card:hover{border-color:var(--blue)}
+.post-card img{width:100%;height:220px;object-fit:cover;display:block}
+.post-card .body{padding:22px 24px}
+.post-card h2{font-size:24px;line-height:1.3;margin-bottom:8px}
+.post-card h2 a{color:var(--ink);text-decoration:none}
+.post-card .meta{font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;
+  font-size:12px;letter-spacing:2px;color:var(--amber);text-transform:uppercase;
+  margin-bottom:10px}
+.post-card p{color:var(--muted);font-size:16px}
+article.post{padding:48px 0 64px}
+article.post .meta{font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;
+  font-size:12px;letter-spacing:2px;color:var(--amber);text-transform:uppercase;
+  margin-bottom:14px}
+article.post h1{font-size:clamp(30px,5.5vw,44px);line-height:1.2;
+  letter-spacing:-.5px;margin-bottom:8px}
+article.post time{color:var(--muted);font-size:15px;
+  font-family:-apple-system,'Helvetica Neue',Arial,sans-serif}
+article.post figure{margin:28px 0}
+article.post figure img{width:100%;border-radius:12px;display:block}
+article.post h2{font-size:24px;margin:44px 0 12px;color:var(--ink)}
+article.post p{margin:0 0 20px}
+article.post ul,article.post ol{margin:0 0 20px 24px}
+article.post li{margin-bottom:10px}
+article.post strong{color:#fff}
+article.post em{color:var(--blue)}
+.back{display:inline-block;margin:32px 0 0;color:var(--blue);text-decoration:none;
+  font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;font-size:15px}
+footer.site{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);
+  font-size:14px;font-family:-apple-system,'Helvetica Neue',Arial,sans-serif}
+@media(max-width:560px){body{font-size:16px}.post-card img{height:170px}}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="/"><span class="dot"></span>SUNWOO PARK</a>
+<div class="tag">Notes on building, in public.</div>
+</div></header>
+<div class="wrap">
+
+<article class="post">
+<div class="meta">Draft — unpublished</div>
+<h1>The 7-Round Rule: When to Stop Arguing With Yourself</h1>
+<time datetime="September 19, 2026">September 19, 2026</time>
+<figure><img src="../images/7-round-rule.webp" alt="The 7-Round Rule: When to Stop Arguing With Yourself"></figure>
+<p>I red-team everything I build. Every plan, every draft, every system gets attacked by me before it meets the world.</p>
+<p>It works. It also has a failure mode nobody warns you about: <strong>there is no natural stopping point.</strong> You can always find one more flaw. One more angle. One more &quot;but what if.&quot; Left alone, red-teaming doesn&#x27;t converge — it becomes a worry loop with extra steps.</p>
+<p>So I gave it a rule. Seven rounds max. Here&#x27;s how it works.</p>
+<h2>The rule</h2>
+<p>When a design matters, I attack it in rounds. Each round must hunt a <strong>different failure mode</strong> than the last one:</p>
+<ul><li>Round 1: attack the premises. What&#x27;s load-bearing that I never questioned?</li><li>Round 2: check the math. Time, cost, numbers — recompute them by hand.</li><li>Round 3: measurability. If I can&#x27;t tell whether it worked, it didn&#x27;t.</li><li>Round 4: failure modes and incentives. Who benefits if this breaks?</li><li>Round 5: my own previous advice. Where was I wrong last time?</li><li>Round 6: the reader test. Would a smart stranger misunderstand this?</li><li>Round 7: the kill test. What would make me delete the whole thing?</li></ul>
+<p>Two stop conditions, whichever comes first:</p>
+<ol><li><strong>Two consecutive rounds find nothing fatal → stop.</strong> Not nothing-at-all — nothing <em>fatal</em>. Cosmetic complaints don&#x27;t extend the fight.</li><li><strong>Seven rounds → stop, no matter what.</strong> Even if round 7 found something. Especially then.</li></ol>
+<p>After the stop: <strong>freeze the design and go touch real data.</strong></p>
+<h2>Why seven</h2>
+<p>Seven isn&#x27;t magic. It&#x27;s the point where, in my experience, the marginal return of another round collapses. Rounds 1–3 find the real bodies. Rounds 4–5 find the structural cracks. Rounds 6–7 are mostly you negotiating with yourself.</p>
+<p>There&#x27;s also a tax most people ignore: every round adds weight. New sections, new rules, new edge cases. My operating file has a growth discipline for this — when I add a rule, I have to merge or delete an old one. Every turn of conversation pays tax on bloat. A design that survives 12 rounds of review isn&#x27;t robust. It&#x27;s obese.</p>
+<p>The honest version: past round 7, you&#x27;re not reviewing anymore. You&#x27;re procrastinating in a lab coat.</p>
+<h2>What counts as a round</h2>
+<p>This is the part people skip, and it&#x27;s the whole game. A round only counts if it attacks a <strong>different failure mode</strong> than the previous rounds. Same complaint in new words = zero.</p>
+<p>&quot;But the tone feels off&quot; after a round about tone is not a new round. It&#x27;s the same round, reheated.</p>
+<p>This is why I write the rounds down as I go. Not the conclusions — the <em>lenses</em>. Premises. Math. Measurability. Incentives. Self-reversal. Reader. Kill. If I catch myself reaching for a lens I already used, the session is over. The rule isn&#x27;t &quot;argue seven times.&quot; It&#x27;s &quot;argue seven <em>different</em> ways, then stop.&quot;</p>
+<h2>The freeze</h2>
+<p>Freezing the design isn&#x27;t surrender. It&#x27;s a decision with a <strong>reversal condition</strong>: if real data overturns it, I flip. Publicly, without drama.</p>
+<p>&quot;If the data flips it, the recommendation flips&quot; — that&#x27;s the deal I make with myself before the freeze. It has to be written down <em>before</em>, because after the freeze your ego starts negotiating.</p>
+<p>Today I ran this on a one-year content plan for a tango event I&#x27;m promoting. Five rounds. Round 2 killed the call-to-action (it pointed to a signup form that didn&#x27;t exist). Round 3 flipped the language strategy (my &quot;English-first&quot; default was wrong for the actual audience). Round 5 caught an unlicensed audio track I&#x27;d already downloaded. Then rounds stopped producing fatalities. Freeze. The remaining questions — photo grading, real reach numbers — can only be answered by real photos and real posts. No round 6 would have found them. Only reality will.</p>
+<p>That&#x27;s the point the rule exists for: <strong>some questions are not answerable by thinking harder.</strong> They&#x27;re answerable by shipping and watching. Every round past the stop condition is a round stolen from the part that actually teaches you something.</p>
+<h2>The honest brake</h2>
+<p>The deepest value of the rule isn&#x27;t efficiency. It&#x27;s honesty.</p>
+<p>Without a stop rule, &quot;I&#x27;m still reviewing&quot; is an alibi. It lets you feel rigorous while avoiding the scary part — putting the thing in front of people who can reject it. The 7-round rule takes the alibi away. When the rounds are done, the only remaining question is whether you have the nerve to freeze.</p>
+<p>I call it the honest brake: a mechanism that stops <em>me</em>, not the work. Most productivity systems are built to make you do more. This one exists to make me stop — at the exact moment stopping becomes the productive thing.</p>
+<h2>The scoreboard</h2>
+<p>Argue hard. Then stop. Freeze the design, write down the reversal condition, and go touch real data.</p>
+<p>The world keeps the score, not your inner committee. Give it the chance to grade you.</p>
+<a class="back" href="/">&larr; All posts</a>
+</article>
+</div>
+<footer class="site"><div class="wrap">
+&copy; 2026 Sunwoo Park. Also on <a href="https://x.com/sunwoopark" style="color:#3f8cff">X</a>.
+</div></footer>
+</body>
+</html>
