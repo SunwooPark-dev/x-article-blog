@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Content Needs Release Gates, Not Inspiration — Sunwoo Park</title>
+<meta name="description" content="Content needs release gates, not inspiration. Four gates between an idea and the public: stockpile 12 finished posts, calibrate like a stranger, automate Day 1, and let the 14-day verdict — keep, change, or kill — decide.">
+<style>
+:root{
+  --bg:#141210; --bg2:#1c1917; --ink:#ece7de; --muted:#a8a094;
+  --blue:#3f8cff; --amber:#e8a33d; --line:#2c2823;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);
+  font-family:Georgia,'Times New Roman',Charter,serif;line-height:1.75;
+  font-size:18px}
+.wrap{max-width:700px;margin:0 auto;padding:0 24px}
+header.site{border-bottom:1px solid var(--line);padding:28px 0}
+header.site .brand{font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;
+  font-weight:800;letter-spacing:3px;font-size:14px;color:var(--ink);
+  text-decoration:none}
+header.site .brand .dot{display:inline-block;width:9px;height:9px;border-radius:50%;
+  background:var(--amber);margin-right:10px}
+header.site .tag{color:var(--muted);font-size:14px;margin-top:6px;
+  font-family:-apple-system,'Helvetica Neue',Arial,sans-serif}
+.hero{padding:56px 0 40px}
+.hero h1{font-size:clamp(34px,6vw,52px);line-height:1.15;letter-spacing:-.5px}
+.hero h1 .acc{color:var(--amber)}
+.hero p{color:var(--muted);margin-top:14px;font-size:17px}
+.post-card{display:block;text-decoration:none;color:inherit;border:1px solid var(--line);
+  border-radius:14px;overflow:hidden;margin-bottom:28px;background:var(--bg2);
+  transition:border-color .2s}
+.post-card:hover{border-color:var(--blue)}
+.post-card img{width:100%;height:220px;object-fit:cover;display:block}
+.post-card .body{padding:22px 24px}
+.post-card h2{font-size:24px;line-height:1.3;margin-bottom:8px}
+.post-card h2 a{color:var(--ink);text-decoration:none}
+.post-card .meta{font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;
+  font-size:12px;letter-spacing:2px;color:var(--amber);text-transform:uppercase;
+  margin-bottom:10px}
+.post-card p{color:var(--muted);font-size:16px}
+article.post{padding:48px 0 64px}
+article.post .meta{font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;
+  font-size:12px;letter-spacing:2px;color:var(--amber);text-transform:uppercase;
+  margin-bottom:14px}
+article.post h1{font-size:clamp(30px,5.5vw,44px);line-height:1.2;
+  letter-spacing:-.5px;margin-bottom:8px}
+article.post time{color:var(--muted);font-size:15px;
+  font-family:-apple-system,'Helvetica Neue',Arial,sans-serif}
+article.post figure{margin:28px 0}
+article.post figure img{width:100%;border-radius:12px;display:block}
+article.post h2{font-size:24px;margin:44px 0 12px;color:var(--ink)}
+article.post p{margin:0 0 20px}
+article.post ul,article.post ol{margin:0 0 20px 24px}
+article.post li{margin-bottom:10px}
+article.post strong{color:#fff}
+article.post em{color:var(--blue)}
+.back{display:inline-block;margin:32px 0 0;color:var(--blue);text-decoration:none;
+  font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;font-size:15px}
+footer.site{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);
+  font-size:14px;font-family:-apple-system,'Helvetica Neue',Arial,sans-serif}
+@media(max-width:560px){body{font-size:16px}.post-card img{height:170px}}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="/"><span class="dot"></span>SUNWOO PARK</a>
+<div class="tag">Notes on building, in public.</div>
+</div></header>
+<div class="wrap">
+
+<article class="post">
+<div class="meta">Published</div>
+<h1>Content Needs Release Gates, Not Inspiration</h1>
+<time datetime="September 23, 2026">September 23, 2026</time>
+
+<figure><img src="../images/00-hero-release-gates.webp" alt="Content Needs Release Gates, Not Inspiration"></figure>
+<p>Everyone gives the same advice about content: &quot;Just post consistently. Let inspiration strike.&quot;</p>
+<p>That&#x27;s terrible advice. It&#x27;s the equivalent of telling a software team to &quot;just write code consistently&quot; — no tests, no review, no staging. Just push to production whenever you feel inspired and hope the users like it.</p>
+<p>No serious engineer ships that way. So why do we publish that way?</p>
+<p>I run my content like software releases. Four gates stand between an idea and the public. Nothing ships without passing all four.</p>
+<p><strong>Gate 1: The Stockpile.</strong></p>
+<figure><img src="../images/01-gate-stockpile.webp" alt="Content Needs Release Gates, Not Inspiration"></figure>
+<p>Before Day 1, I stockpile 12 finished posts. Twelve. Not drafts — finished, publish-ready pieces sitting in a queue.</p>
+<p>Why? Because publishing from an empty buffer is how you end up posting garbage at 11 PM. When the queue is full, every publishing decision is calm. You&#x27;re never choosing between &quot;post something bad&quot; and &quot;post nothing.&quot; That choice is what kills most accounts I&#x27;ve seen — not lack of talent, lack of buffer.</p>
+<p>Software parallel: you don&#x27;t deploy from a developer&#x27;s laptop on a Friday night. You deploy from a release candidate. The stockpile is the release candidate — and Gate 2 is what tests it.</p>
+<p><strong>Gate 2: Quality Calibration.</strong></p>
+<figure><img src="../images/02-gate-calibration.webp" alt="Content Needs Release Gates, Not Inspiration"></figure>
+<p>One full day is reserved for review — not creating. I read all 12 as a stranger would. Does the hook work? Is the account&#x27;s voice consistent? Would I stop scrolling for this?</p>
+<p>This is the code review of content. The author is always too close to their own work to judge it. So I built a gate that forces distance: create on one day, judge on another, never both.</p>
+<p>Most creators skip this gate because it feels like &quot;not real work.&quot; It&#x27;s the most real work. It&#x27;s the difference between a feed that looks intentional and one that looks accidental.</p>
+<p><strong>Gate 3: Day 1.</strong></p>
+<figure><img src="../images/03-gate-day1.webp" alt="Content Needs Release Gates, Not Inspiration"></figure>
+<p>The publish date is fixed in advance, and publishing is automated. When the day comes, the posts go out whether I feel inspired or not — because the decision was already made at Gate 1 and Gate 2.</p>
+<p>This is the deploy pipeline. In software, you don&#x27;t ask &quot;do I feel like deploying today?&quot; You merge, the pipeline runs, it ships. Content should work the same way. Motivation is a terrible scheduler; automation doesn&#x27;t need motivation.</p>
+<p><strong>Gate 4: The 14-Day Verdict.</strong></p>
+<figure><img src="../images/04-gate-verdict.webp" alt="Content Needs Release Gates, Not Inspiration"></figure>
+<p>Fourteen days after Day 1, I look at the numbers — impressions, real replies, profile visits — and make one of three calls: keep, change, or kill.</p>
+<ul><li><strong>Keep:</strong> the format works. Double down.</li><li><strong>Change:</strong> something&#x27;s off — hook, timing, topic. Adjust one variable and re-test.</li><li><strong>Kill:</strong> the data says no. Kill it fast, no sentimentality.</li></ul>
+<p>This is the part most people never build. They either never look at data (vibes forever) or they look at it daily and panic at every dip (noise forever). Fourteen days is long enough to see signal, short enough to stay agile.</p>
+<p>If your account is brand new, pair the 14 days with a minimum sample — never deliver a verdict on noise. My starting default: at least 1,000 impressions or 50 engagements before I treat the verdict as signal.</p>
+<p>The verdict is pre-committed: I decide the criteria before Day 1 — for me, something like 500 impressions or 5 real replies in 14 days — so the 14-day review executes a decision instead of hosting a debate with my ego.</p>
+<p>---</p>
+<figure><img src="../images/05-closing-pipeline.webp" alt="Content Needs Release Gates, Not Inspiration"></figure>
+<p>Why gates instead of inspiration? Because inspiration is a liar. It shows up for the first post and abandons you by the fifth. Systems don&#x27;t have moods.</p>
+<p>And here&#x27;s the deeper point: gates don&#x27;t just filter bad content. They generate learning. Every post that passes through four gates teaches you something specific — which gate almost stopped it, what the data said, what to change. Inspiration-based publishing teaches you nothing, because there&#x27;s no structure to learn from. You can&#x27;t debug a process that doesn&#x27;t exist.</p>
+<p>Software figured this out decades ago: the pipeline is the product. The release process matters as much as the code. Content is no different. The publishing process matters as much as the post.</p>
+<p>So stop waiting to feel inspired. Build the gates. Stockpile before you ship. Review like a stranger. Automate the deploy. And let the 14-day data — not your gut, not your mood — decide what lives and what dies.</p>
+<p>One more thing: the numbers in this piece — 12 in the stockpile, 14 days of observation, 10 posts before you start — are my starting defaults, not laws. Tune them once you have your own data.</p>
+<p>One caveat: if you haven&#x27;t published ten things yet, ignore everything above — go publish ten bad posts first. Gates are for people who already ship and want to stop shipping randomly.</p>
+<p>Inspiration gets you started. Gates keep you shipping.</p>
+<a class="back" href="/">&larr; All posts</a>
+</article>
+</div>
+<footer class="site"><div class="wrap">
+&copy; 2026 Sunwoo Park. Also on <a href="https://x.com/sunwoopark" style="color:#3f8cff">X</a>.
+</div></footer>
+</body>
+</html>
