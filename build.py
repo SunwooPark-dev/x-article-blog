@@ -7,6 +7,7 @@ import re
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 FILES = os.path.expanduser("~/workspace/goals/neon-oracle-fortune-app/files")
+SITE_URL = "https://x-article-blog-sunwoopark0512-4225s-projects.vercel.app"
 
 ARTICLES = [
     {
@@ -53,6 +54,17 @@ ARTICLES = [
         "no_hero_figure": True,  # hero placed inline via 👉 marker
         "blurb": "Stop publishing on vibes. Run your content like software releases: four gates between every idea and the public \u2014 stockpile, calibrate, deploy, and let the 14-day data decide.",
         "meta_desc": "Content needs release gates, not inspiration. Four gates between an idea and the public: stockpile 12 finished posts, calibrate like a stranger, automate Day 1, and let the 14-day verdict \u2014 keep, change, or kill \u2014 decide.",
+    },
+    {
+        "slug": "dont-convince-the-customer-make-betrayal-impossible",
+        "src": "x-article-betrayal-impossible/article.md",
+        "title_line_prefix": "# Don't Convince the Customer.",
+        "title_occurrence": 0,
+        "date_label": "September 23, 2026",
+        "status": "published",
+        "image": "betrayal-impossible.webp",
+        "blurb": "Stop optimizing the win-back email. Three mechanics of unbetrayable trust: tell the costly truth, keep one small promise daily, and let customers co-own the ritual.",
+        "meta_desc": "Don't convince the customer \u2014 become the one they can't betray. Three mechanics of unbetrayable trust: costly truth, one small daily promise, co-owned rituals.",
     },
 ]
 
@@ -212,6 +224,7 @@ BASE_HTML = """<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
 <meta name="description" content="{desc}">
+<link rel="canonical" href="{canonical}">
 <style>{css}</style>
 </head>
 <body>
@@ -259,6 +272,7 @@ def main():
 </article>"""
         page = BASE_HTML.format(title=f"{title} \u2014 Sunwoo Park",
                                 desc=html.escape(a["meta_desc"]),
+                                canonical=f"{SITE_URL}/posts/{a['slug']}",
                                 css=CSS, content=content)
         out = os.path.join(BASE, "posts", f"{a['slug']}.html")
         with open(out, "w", encoding="utf-8") as f:
@@ -284,6 +298,7 @@ def main():
 {''.join(cards)}"""
     index = BASE_HTML.format(title="Sunwoo Park \u2014 Notes on building",
                              desc="Long-form essays behind the X threads: craft, systems, and showing up daily.",
+                             canonical=SITE_URL,
                              css=CSS, content=index_content)
     with open(os.path.join(BASE, "index.html"), "w", encoding="utf-8") as f:
         f.write(index)
@@ -295,14 +310,15 @@ def main():
     sha = hashlib.sha256(dc.encode("utf-8")).hexdigest()
     rg = extracted["content-needs-release-gates"]
     rg_sha = hashlib.sha256(rg.encode("utf-8")).hexdigest()
+    bi = extracted["dont-convince-the-customer-make-betrayal-impossible"]
+    bi_sha = hashlib.sha256(bi.encode("utf-8")).hexdigest()
     with open(os.path.join(BASE, "BUILD_NOTES.md"), "w", encoding="utf-8") as f:
         f.write(f"""# Build notes
 - Bodies extracted verbatim from the draft .md files (no byte altered).
   content-needs-release-gates: 원고 section of x-article-release-gates/article.md
   (title line to just before '## 숏포스트 3개').
 - DRAFT meta blocks and short-post sections excluded from pages.
-- canonical <link> NOT added: domain not finalized. Add after deploy:
-  <link rel="canonical" href="https://DOMAIN/posts/<slug>"> per article page.
+- canonical <link> auto-added per page: {SITE_URL}/posts/<slug> (index: {SITE_URL}).
 - Image mapping: images/write-50-posts.webp / 7-round-rule.webp / daily-compounding.webp
   <- media-generation-x-article-2026-09-19-50-posts-*.webp,
      media-generation-x-article-2026-09-19-7-round-r-*.webp,
@@ -316,10 +332,16 @@ def main():
 - content-needs-release-gates body sha256: {rg_sha}
   (bytes = from '# Content Needs Release Gates...' title line under
    '## 원고 (영어 전문)' to just before the line '## 숏포스트 3개')
+- betrayal-impossible image: images/betrayal-impossible.webp
+  <- x-article-betrayal-impossible/assets/media-generation-hero-knot-*.webp
+- dont-convince-the-customer-make-betrayal-impossible body sha256: {bi_sha}
+  (bytes = from '# Don't Convince the Customer...' title line
+   to just before the line that is exactly '---')
 """)
     print("PAGES:", pages)
     print("DAILY_COMPOUNDING_SHA256:", sha)
     print("RELEASE_GATES_SHA256:", rg_sha)
+    print("BETRAYAL_SHA256:", bi_sha)
     print("RG_BODY_BYTES:", len(rg.encode("utf-8")))
 
 
