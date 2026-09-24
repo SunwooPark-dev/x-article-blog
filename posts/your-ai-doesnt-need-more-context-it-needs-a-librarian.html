@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your AI Doesn't Need More Context. It Needs a Librarian. — Sunwoo Park</title>
+<meta name="description" content="Your AI doesn&#x27;t need more context. It needs a librarian. Summary notes, daily logs, per-person cards — feed it less, curate what you keep.">
+<link rel="canonical" href="https://x-article-blog-sunwoopark0512-4225s-projects.vercel.app/posts/your-ai-doesnt-need-more-context-it-needs-a-librarian">
+<style>
+:root{
+  --bg:#141210; --bg2:#1c1917; --ink:#ece7de; --muted:#a8a094;
+  --blue:#3f8cff; --amber:#e8a33d; --line:#2c2823;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);
+  font-family:Georgia,'Times New Roman',Charter,serif;line-height:1.75;
+  font-size:18px}
+.wrap{max-width:700px;margin:0 auto;padding:0 24px}
+header.site{border-bottom:1px solid var(--line);padding:28px 0}
+header.site .brand{font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;
+  font-weight:800;letter-spacing:3px;font-size:14px;color:var(--ink);
+  text-decoration:none}
+header.site .brand .dot{display:inline-block;width:9px;height:9px;border-radius:50%;
+  background:var(--amber);margin-right:10px}
+header.site .tag{color:var(--muted);font-size:14px;margin-top:6px;
+  font-family:-apple-system,'Helvetica Neue',Arial,sans-serif}
+.hero{padding:56px 0 40px}
+.hero h1{font-size:clamp(34px,6vw,52px);line-height:1.15;letter-spacing:-.5px}
+.hero h1 .acc{color:var(--amber)}
+.hero p{color:var(--muted);margin-top:14px;font-size:17px}
+.post-card{display:block;text-decoration:none;color:inherit;border:1px solid var(--line);
+  border-radius:14px;overflow:hidden;margin-bottom:28px;background:var(--bg2);
+  transition:border-color .2s}
+.post-card:hover{border-color:var(--blue)}
+.post-card img{width:100%;height:220px;object-fit:cover;display:block}
+.post-card .body{padding:22px 24px}
+.post-card h2{font-size:24px;line-height:1.3;margin-bottom:8px}
+.post-card h2 a{color:var(--ink);text-decoration:none}
+.post-card .meta{font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;
+  font-size:12px;letter-spacing:2px;color:var(--amber);text-transform:uppercase;
+  margin-bottom:10px}
+.post-card p{color:var(--muted);font-size:16px}
+article.post{padding:48px 0 64px}
+article.post .meta{font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;
+  font-size:12px;letter-spacing:2px;color:var(--amber);text-transform:uppercase;
+  margin-bottom:14px}
+article.post h1{font-size:clamp(30px,5.5vw,44px);line-height:1.2;
+  letter-spacing:-.5px;margin-bottom:8px}
+article.post time{color:var(--muted);font-size:15px;
+  font-family:-apple-system,'Helvetica Neue',Arial,sans-serif}
+article.post figure{margin:28px 0}
+article.post figure img{width:100%;border-radius:12px;display:block}
+article.post h2{font-size:24px;margin:44px 0 12px;color:var(--ink)}
+article.post p{margin:0 0 20px}
+article.post ul,article.post ol{margin:0 0 20px 24px}
+article.post li{margin-bottom:10px}
+article.post strong{color:#fff}
+article.post em{color:var(--blue)}
+.back{display:inline-block;margin:32px 0 0;color:var(--blue);text-decoration:none;
+  font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;font-size:15px}
+footer.site{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);
+  font-size:14px;font-family:-apple-system,'Helvetica Neue',Arial,sans-serif}
+@media(max-width:560px){body{font-size:16px}.post-card img{height:170px}}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="/"><span class="dot"></span>SUNWOO PARK</a>
+<div class="tag">Notes on building, in public.</div>
+</div></header>
+<div class="wrap">
+
+<article class="post">
+<div class="meta">Published</div>
+<h1>Your AI Doesn&#x27;t Need More Context. It Needs a Librarian.</h1>
+<time datetime="September 23, 2026">September 23, 2026</time>
+<figure><img src="../images/ai-librarian.webp" alt="Your AI Doesn&#x27;t Need More Context. It Needs a Librarian."></figure>
+<p>I stopped feeding my AI everything.</p>
+<p>That was the first mistake I made as a power user: believing memory was a storage problem. Longer context windows, bigger uploads, every document I owned. If the model could see everything, it would know everything.</p>
+<p>It didn&#x27;t. It saw everything and understood less.</p>
+<p>The longer the context got, the vaguer the answers became. Relevant facts drowned in irrelevant ones. My AI had perfect recall and terrible judgment — like someone who reads every book on the shelf and remembers none of them.</p>
+<p>The problem wasn&#x27;t memory. The problem was that I had given my AI a warehouse when it needed a librarian.</p>
+<h2>Raw context is a haystack</h2>
+<p>A giant context window is a haystack with a million-dollar promise: the needle is in there somewhere. But attention is a budget. Every irrelevant paragraph you add dilutes the weight of the paragraph that matters.</p>
+<p>I watched my assistant cite a plan I&#x27;d scrapped three months ago — confidently, because the document was in context and the context was too long for it to weigh what was current. Storage isn&#x27;t curation. A bigger pile doesn&#x27;t find the needle. It buries it.</p>
+<p>What I needed wasn&#x27;t more room. It was someone in the room — a librarian who decides what&#x27;s worth keeping, what&#x27;s worth finding, and what&#x27;s worth forgetting.</p>
+<h2>My three librarian tools</h2>
+<p>I built my assistant&#x27;s memory the way a good library works. Three instruments, all maintained by me, all opinionated.</p>
+<p><strong>Summary notes.</strong> Not transcripts — distillations. After a long conversation, I keep the decisions, the commitments, the why. A page of notes beats fifty pages of chat logs, because the notes already did the thinking. The AI doesn&#x27;t need to relive the conversation. It needs the conclusions.</p>
+<p><strong>Daily logs.</strong> One line per day about what happened and what mattered. Days blur for machines the same way they blur for us; a dated line — &quot;Sept 23: decided to kill the A plan, going with B&quot; — gives the assistant a timeline to stand on. Without a log, every day is equally today. With one, the AI knows what changed and when.</p>
+<p><strong>Per-person cards.</strong> One card per person who matters: who they are, what we&#x27;ve decided together, what I care about in relation to them. When I mention a name, my assistant doesn&#x27;t search forty thousand messages. It opens a card. A card is a relationship, compressed to what you need to act on.</p>
+<p>None of this is automatic. That&#x27;s the point. Curation is a human verb — and verbs need repeating: a note I don&#x27;t update becomes a confident lie with my name on it.</p>
+<h2>Retrieval is curation, not storage</h2>
+<p>Here&#x27;s the principle I now run everything on: the quality of an AI&#x27;s memory is decided at write time, not read time.</p>
+<p>Storage asks: <em>how much can we keep?</em> Curation asks: <em>what&#x27;s worth keeping, and in what form?</em> A summary note written by someone with judgment beats a full transcript retrieved by something without it. The librarian&#x27;s work happens before the question is ever asked.</p>
+<p>This is why the librarian has to be me — or at least start with me. I know what mattered in the conversation. I know which commitment was real and which was thinking out loud. No retrieval algorithm can know that. Judgment is the part that can&#x27;t be automated, which makes it the part that matters most.</p>
+<h2>The closing</h2>
+<p>A bigger shelf doesn&#x27;t make a library. A librarian does.</p>
+<p>Feed your AI less. Curate what you keep. Write the note, log the day, keep the card — and let the retrieval be the easy part, because the hard part was already done by you.</p>
+<p>Your AI doesn&#x27;t need more context. It needs a librarian. Be the librarian.</p>
+<a class="back" href="/">&larr; All posts</a>
+</article>
+</div>
+<footer class="site"><div class="wrap">
+&copy; 2026 Sunwoo Park. Also on <a href="https://x.com/sunwoopark" style="color:#3f8cff">X</a>.
+</div></footer>
+</body>
+</html>

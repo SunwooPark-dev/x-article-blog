@@ -66,6 +66,17 @@ ARTICLES = [
         "blurb": "Stop optimizing the win-back email. Three mechanics of unbetrayable trust: tell the costly truth, keep one small promise daily, and let customers co-own the ritual.",
         "meta_desc": "Don't convince the customer \u2014 become the one they can't betray. Three mechanics of unbetrayable trust: costly truth, one small daily promise, co-owned rituals.",
     },
+    {
+        "slug": "your-ai-doesnt-need-more-context-it-needs-a-librarian",
+        "src": "x-article-ai-librarian/article.md",
+        "title_line_prefix": "# Your AI Doesn't Need More Context.",
+        "title_occurrence": 0,
+        "date_label": "September 23, 2026",
+        "status": "published",
+        "image": "ai-librarian.webp",
+        "blurb": "Longer context didn't fix my AI's memory. What worked: summary notes, daily logs, per-person cards. Retrieval is curation, not storage.",
+        "meta_desc": "Your AI doesn't need more context. It needs a librarian. Summary notes, daily logs, per-person cards \u2014 feed it less, curate what you keep.",
+    },
 ]
 
 
