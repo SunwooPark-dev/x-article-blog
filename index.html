@@ -6,6 +6,27 @@
 <title>Sunwoo Park — Notes on building</title>
 <meta name="description" content="Long-form essays behind the X threads: craft, systems, and showing up daily.">
 <link rel="canonical" href="https://x-article-blog-sunwoopark0512-4225s-projects.vercel.app">
+<meta property="og:title" content="Sunwoo Park — Notes on building">
+<meta property="og:description" content="Long-form essays behind the X threads: craft, systems, and showing up daily.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://x-article-blog-sunwoopark0512-4225s-projects.vercel.app">
+<meta property="og:site_name" content="Sunwoo Park — Notes on building">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@sunwoopark">
+<meta name="twitter:title" content="Sunwoo Park — Notes on building">
+<meta name="twitter:description" content="Long-form essays behind the X threads: craft, systems, and showing up daily.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Sunwoo Park — Notes on building",
+  "url": "https://x-article-blog-sunwoopark0512-4225s-projects.vercel.app",
+  "author": {
+    "@type": "Person",
+    "name": "Sunwoo Park"
+  }
+}
+</script>
 <style>
 :root{
   --bg:#141210; --bg2:#1c1917; --ink:#ece7de; --muted:#a8a094;
@@ -59,9 +80,46 @@ article.post strong{color:#fff}
 article.post em{color:var(--blue)}
 .back{display:inline-block;margin:32px 0 0;color:var(--blue);text-decoration:none;
   font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;font-size:15px}
+.newsletter{border:1px solid var(--line);border-radius:14px;background:var(--bg2);
+  padding:28px;margin:0 0 36px}
+.newsletter h3{font-size:22px;margin-bottom:6px;letter-spacing:-.3px}
+.newsletter p{color:var(--muted);font-size:15px;margin-bottom:16px}
+.newsletter form{display:flex;gap:10px}
+.newsletter input[type=email]{flex:1;min-width:0;background:var(--bg);
+  border:1px solid var(--line);border-radius:10px;color:var(--ink);
+  padding:12px 14px;font-size:16px;font-family:-apple-system,'Helvetica Neue',Arial,sans-serif}
+.newsletter input[type=email]:focus{outline:none;border-color:var(--blue)}
+.newsletter button{background:var(--amber);color:#141210;border:0;border-radius:10px;
+  padding:12px 22px;font-weight:700;font-size:15px;cursor:pointer;white-space:nowrap;
+  font-family:-apple-system,'Helvetica Neue',Arial,sans-serif}
+.newsletter button:hover{filter:brightness(1.08)}
+.newsletter button:disabled{opacity:.6;cursor:wait}
+.newsletter .msg{display:none;font-size:15px;margin-top:12px}
+.newsletter .msg.ok{display:block;color:var(--amber)}
+.newsletter .msg.err{display:block;color:#e06c5b}
+.newsletter .privacy{font-size:13px;color:var(--muted);margin:12px 0 0}
+.share{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:44px 0 8px;
+  padding-top:28px;border-top:1px solid var(--line);
+  font-family:-apple-system,'Helvetica Neue',Arial,sans-serif}
+.share .share-label{color:var(--muted);font-size:14px;margin-right:4px}
+.share a.x{display:inline-block;background:var(--bg2);border:1px solid var(--line);
+  color:var(--ink);text-decoration:none;font-size:14px;font-weight:600;
+  padding:10px 18px;border-radius:999px}
+.share a.x:hover{border-color:var(--blue)}
+.share button.copy{background:none;border:1px solid var(--line);color:var(--muted);
+  font-size:14px;font-weight:600;padding:10px 18px;border-radius:999px;cursor:pointer;
+  font-family:-apple-system,'Helvetica Neue',Arial,sans-serif}
+.share button.copy:hover{border-color:var(--amber);color:var(--ink)}
+.related{margin:36px 0 8px}
+.related h3{font-size:20px;margin-bottom:4px;letter-spacing:-.3px}
+.related ul{list-style:none;margin:12px 0 0}
+.related li{margin-bottom:10px}
+.related a{color:var(--blue);text-decoration:none;font-size:17px}
+.related a:hover{text-decoration:underline}
 footer.site{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);
   font-size:14px;font-family:-apple-system,'Helvetica Neue',Arial,sans-serif}
-@media(max-width:560px){body{font-size:16px}.post-card img{height:170px}}
+@media(max-width:560px){body{font-size:16px}.post-card img{height:170px}
+  .newsletter form{flex-direction:column}}
 </style>
 </head>
 <body>
@@ -75,6 +133,34 @@ footer.site{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);
 <h1>Building in public,<br><span class="acc">twenty minutes</span> at a time.</h1>
 <p>Long-form notes behind the X threads — English essays on craft, systems, and showing up.</p>
 </div>
+<section class="newsletter">
+<h3>Get new essays by email</h3>
+<p>One short email when a new essay drops.</p>
+<form data-subscribe-endpoint="/api/subscribe" novalidate>
+<input type="email" name="email" placeholder="you@example.com" required aria-label="Email address">
+<button type="submit">Subscribe</button>
+</form>
+<div class="msg" role="status" aria-live="polite"></div>
+<p class="privacy">No spam. Unsubscribe anytime.</p>
+<script>(function(){
+var sec=document.currentScript.parentElement;
+var f=sec.querySelector('form');
+var msg=sec.querySelector('.msg');
+f.addEventListener('submit',function(e){
+e.preventDefault();
+msg.className='msg';msg.textContent='';
+var email=f.email.value.trim();
+if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+msg.textContent='Please enter a valid email address.';msg.classList.add('err');return;}
+var btn=f.querySelector('button');btn.disabled=true;var orig=btn.textContent;btn.textContent='Subscribing\u2026';
+fetch(f.getAttribute('data-subscribe-endpoint'),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email})})
+.then(function(r){if(!r.ok){throw new Error('http '+r.status);}return r.json().catch(function(){return {};});})
+.then(function(){msg.textContent='You\u2019re in \u2014 check your inbox.';msg.classList.add('ok');f.reset();})
+.catch(function(){msg.textContent='Something went wrong. Please try again.';msg.classList.add('err');})
+.then(function(){btn.disabled=false;btn.textContent=orig;});
+});
+})();</script>
+</section>
 
 <a class="post-card" href="/posts/write-50-posts-before-your-first-follower">
 <img src="/images/write-50-posts.webp" alt="Write 50 Posts Before Your First Follower">
@@ -117,6 +203,13 @@ footer.site{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);
 <div class="meta">September 23, 2026</div>
 <h2>Your AI Doesn&#x27;t Need More Context. It Needs a Librarian.</h2>
 <p>Longer context didn&#x27;t fix my AI&#x27;s memory. What worked: summary notes, daily logs, per-person cards. Retrieval is curation, not storage.</p>
+</div></a>
+<a class="post-card" href="/posts/one-finished-video-is-a-demo">
+<img src="/images/pipeline-is-product.webp" alt="One Finished Video Is a Demo. A Daily Pipeline Is the Product.">
+<div class="body">
+<div class="meta">September 28, 2026</div>
+<h2>One Finished Video Is a Demo. A Daily Pipeline Is the Product.</h2>
+<p>One finished video is a demo; a daily pipeline is the product. V1 never ships, drafts arrive at 9:20 AM, and judging beats creating.</p>
 </div></a>
 </div>
 <footer class="site"><div class="wrap">
