@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>Sunwoo Park — Notes on building</title>
+  <link>https://x-article-blog-sunwoopark0512-4225s-projects.vercel.app</link>
+  <description>Long-form essays behind the X threads: craft, systems, and showing up daily.</description>
+  <item>
+    <title>Write 50 Posts Before Your First Follower — Sunwoo Park</title>
+    <link>https://x-article-blog-sunwoopark0512-4225s-projects.vercel.app/posts/write-50-posts-before-your-first-follower</link>
+    <guid>https://x-article-blog-sunwoopark0512-4225s-projects.vercel.app/posts/write-50-posts-before-your-first-follower</guid>
+    <pubDate>Sat, 19 Sep 2026 00:00:00 GMT</pubDate>
+    <description>Stop waiting for followers to start. Your first 50 posts aren’t for an audience — they’re for you. Voice, detachment from the scoreboard, a body of proof, and editing instincts are all earned through reps.</description>
+  </item>
+  <item>
+    <title>The 7-Round Rule: When to Stop Arguing With Yourself — Sunwoo Park</title>
+    <link>https://x-article-blog-sunwoopark0512-4225s-projects.vercel.app/posts/the-7-round-rule</link>
+    <guid>https://x-article-blog-sunwoopark0512-4225s-projects.vercel.app/posts/the-7-round-rule</guid>
+    <pubDate>Sat, 19 Sep 2026 00:00:00 GMT</pubDate>
+    <description>Red-teaming has a failure mode nobody warns you about: no natural stopping point. Seven rounds max, each attacking a different failure mode. Then freeze the design, write down the reversal condition, and go touch real data.</description>
+  </item>
+  <item>
+    <title>Daily Compounding Turned Me From An AI Consumer Into A Builder — Sunwoo Park</title>
+    <link>https://x-article-blog-sunwoopark0512-4225s-projects.vercel.app/posts/daily-compounding</link>
+    <guid>https://x-article-blog-sunwoopark0512-4225s-projects.vercel.app/posts/daily-compounding</guid>
+    <pubDate>Sun, 20 Sep 2026 00:00:00 GMT</pubDate>
+    <description>For my first year or two with AI tools, I was a world-class consumer. The shift came from a smaller decision: twenty minutes a day, touching the thing. Compounding only works if you deposit — every day, small amounts, boring amounts.</description>
+  </item>
+  <item>
+    <title>Content Needs Release Gates, Not Inspiration — Sunwoo Park</title>
+    <link>https://x-article-blog-sunwoopark0512-4225s-projects.vercel.app/posts/content-needs-release-gates</link>
+    <guid>https://x-article-blog-sunwoopark0512-4225s-projects.vercel.app/posts/content-needs-release-gates</guid>
+    <pubDate>Wed, 23 Sep 2026 00:00:00 GMT</pubDate>
+    <description>Content needs release gates, not inspiration. Four gates between an idea and the public: stockpile 12 finished posts, calibrate like a stranger, automate Day 1, and let the 14-day verdict — keep, change, or kill — decide.</description>
+  </item>
+  <item>
+    <title>Don't Convince the Customer. Make Betrayal Impossible. — Sunwoo Park</title>
+    <link>https://x-article-blog-sunwoopark0512-4225s-projects.vercel.app/posts/dont-convince-the-customer-make-betrayal-impossible</link>
+    <guid>https://x-article-blog-sunwoopark0512-4225s-projects.vercel.app/posts/dont-convince-the-customer-make-betrayal-impossible</guid>
+    <pubDate>Wed, 23 Sep 2026 00:00:00 GMT</pubDate>
+    <description>Don't convince the customer — become the one they can't betray. Three mechanics of unbetrayable trust: costly truth, one small daily promise, co-owned rituals.</description>
+  </item>
+  <item>
+    <title>Your AI Doesn't Need More Context. It Needs a Librarian. — Sunwoo Park</title>
+    <link>https://x-article-blog-sunwoopark0512-4225s-projects.vercel.app/posts/your-ai-doesnt-need-more-context-it-needs-a-librarian</link>
+    <guid>https://x-article-blog-sunwoopark0512-4225s-projects.vercel.app/posts/your-ai-doesnt-need-more-context-it-needs-a-librarian</guid>
+    <pubDate>Wed, 23 Sep 2026 00:00:00 GMT</pubDate>
+    <description>Your AI doesn't need more context. It needs a librarian. Summary notes, daily logs, per-person cards — feed it less, curate what you keep.</description>
+  </item>
+  <item>
+    <title>One Finished Video Is a Demo. A Daily Pipeline Is the Product. — Sunwoo Park</title>
+    <link>https://x-article-blog-sunwoopark0512-4225s-projects.vercel.app/posts/one-finished-video-is-a-demo</link>
+    <guid>https://x-article-blog-sunwoopark0512-4225s-projects.vercel.app/posts/one-finished-video-is-a-demo</guid>
+    <pubDate>Mon, 28 Sep 2026 00:00:00 GMT</pubDate>
+    <description>One finished video is a demo. A daily pipeline is the product: a 9:20 AM draft machine, a v1-never-ships rule, and separating deciding from doing — how a solo creator beats the continuity trap.</description>
+  </item>
+</channel>
+</rss>
