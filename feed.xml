@@ -53,5 +53,12 @@
     <pubDate>Mon, 28 Sep 2026 00:00:00 GMT</pubDate>
     <description>One finished video is a demo. A daily pipeline is the product: a 9:20 AM draft machine, a v1-never-ships rule, and separating deciding from doing — how a solo creator beats the continuity trap.</description>
   </item>
+  <item>
+    <title>Specs Harden in Review, Not in Planning — Sunwoo Park</title>
+    <link>https://x-article-blog-sunwoopark0512-4225s-projects.vercel.app/posts/specs-harden-in-review</link>
+    <guid>https://x-article-blog-sunwoopark0512-4225s-projects.vercel.app/posts/specs-harden-in-review</guid>
+    <pubDate>Thu, 01 Oct 2026 00:00:00 GMT</pubDate>
+    <description>My game prototype passed all 44 tests — but the spec hardened in review, not in planning. Three of Codex's 8 review findings became regression tests. A review comment is advice; a test is enforcement. Specs harden when the weak spot gets a guard.</description>
+  </item>
 </channel>
 </rss>
