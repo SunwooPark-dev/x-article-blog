@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Break First, Then Build — Sunwoo Park</title>
+<meta name="description" content="Last night my AI ran five rounds attacking its own plan: the waterfall sequencing broke, the definition broke, the tech assumption broke. What got built wasn’t a patched chatbot plan — it was a voice demo. Break first, then build: patch facts, rebuild premises, and let trust compound.">
+<link rel="canonical" href="https://x-article-blog-sunwoopark0512-4225s-projects.vercel.app/posts/break-first-then-build">
+<meta property="og:title" content="Break First, Then Build — Sunwoo Park">
+<meta property="og:description" content="Last night my AI ran five rounds attacking its own plan: the waterfall sequencing broke, the definition broke, the tech assumption broke. What got built wasn’t a patched chatbot plan — it was a voice demo. Break first, then build: patch facts, rebuild premises, and let trust compound.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://x-article-blog-sunwoopark0512-4225s-projects.vercel.app/posts/break-first-then-build">
+<meta property="og:site_name" content="Sunwoo Park — Notes on building">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@sunwoopark">
+<meta name="twitter:title" content="Break First, Then Build — Sunwoo Park">
+<meta name="twitter:description" content="Last night my AI ran five rounds attacking its own plan: the waterfall sequencing broke, the definition broke, the tech assumption broke. What got built wasn’t a patched chatbot plan — it was a voice demo. Break first, then build: patch facts, rebuild premises, and let trust compound.">
+<meta property="og:image" content="https://x-article-blog-sunwoopark0512-4225s-projects.vercel.app/images/break-first-then-build.png">
+<meta name="twitter:image" content="https://x-article-blog-sunwoopark0512-4225s-projects.vercel.app/images/break-first-then-build.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Break First, Then Build — Sunwoo Park",
+  "description": "Last night my AI ran five rounds attacking its own plan: the waterfall sequencing broke, the definition broke, the tech assumption broke. What got built wasn’t a patched chatbot plan — it was a voice demo. Break first, then build: patch facts, rebuild premises, and let trust compound.",
+  "datePublished": "2026-10-02",
+  "author": {
+    "@type": "Person",
+    "name": "Sunwoo Park"
+  },
+  "url": "https://x-article-blog-sunwoopark0512-4225s-projects.vercel.app/posts/break-first-then-build",
+  "image": "https://x-article-blog-sunwoopark0512-4225s-projects.vercel.app/images/break-first-then-build.png"
+}
+</script>
+<style>
+:root{
+  --bg:#141210; --bg2:#1c1917; --ink:#ece7de; --muted:#a8a094;
+  --blue:#3f8cff; --amber:#e8a33d; --line:#2c2823;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);
+  font-family:Georgia,'Times New Roman',Charter,serif;line-height:1.75;
+  font-size:18px}
+.wrap{max-width:700px;margin:0 auto;padding:0 24px}
+header.site{border-bottom:1px solid var(--line);padding:28px 0}
+header.site .brand{font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;
+  font-weight:800;letter-spacing:3px;font-size:14px;color:var(--ink);
+  text-decoration:none}
+header.site .brand .dot{display:inline-block;width:9px;height:9px;border-radius:50%;
+  background:var(--amber);margin-right:10px}
+header.site .tag{color:var(--muted);font-size:14px;margin-top:6px;
+  font-family:-apple-system,'Helvetica Neue',Arial,sans-serif}
+.hero{padding:56px 0 40px}
+.hero h1{font-size:clamp(34px,6vw,52px);line-height:1.15;letter-spacing:-.5px}
+.hero h1 .acc{color:var(--amber)}
+.hero p{color:var(--muted);margin-top:14px;font-size:17px}
+.post-card{display:block;text-decoration:none;color:inherit;border:1px solid var(--line);
+  border-radius:14px;overflow:hidden;margin-bottom:28px;background:var(--bg2);
+  transition:border-color .2s}
+.post-card:hover{border-color:var(--blue)}
+.post-card img{width:100%;height:220px;object-fit:cover;display:block}
+.post-card .body{padding:22px 24px}
+.post-card h2{font-size:24px;line-height:1.3;margin-bottom:8px}
+.post-card h2 a{color:var(--ink);text-decoration:none}
+.post-card .meta{font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;
+  font-size:12px;letter-spacing:2px;color:var(--amber);text-transform:uppercase;
+  margin-bottom:10px}
+.post-card p{color:var(--muted);font-size:16px}
+article.post{padding:48px 0 64px}
+article.post .meta{font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;
+  font-size:12px;letter-spacing:2px;color:var(--amber);text-transform:uppercase;
+  margin-bottom:14px}
+article.post h1{font-size:clamp(30px,5.5vw,44px);line-height:1.2;
+  letter-spacing:-.5px;margin-bottom:8px}
+article.post time{color:var(--muted);font-size:15px;
+  font-family:-apple-system,'Helvetica Neue',Arial,sans-serif}
+article.post figure{margin:28px 0}
+article.post figure img{width:100%;border-radius:12px;display:block}
+article.post h2{font-size:24px;margin:44px 0 12px;color:var(--ink)}
+article.post p{margin:0 0 20px}
+article.post ul,article.post ol{margin:0 0 20px 24px}
+article.post li{margin-bottom:10px}
+article.post strong{color:#fff}
+article.post em{color:var(--blue)}
+.back{display:inline-block;margin:32px 0 0;color:var(--blue);text-decoration:none;
+  font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;font-size:15px}
+.newsletter{border:1px solid var(--line);border-radius:14px;background:var(--bg2);
+  padding:28px;margin:0 0 36px}
+.newsletter h3{font-size:22px;margin-bottom:6px;letter-spacing:-.3px}
+.newsletter p{color:var(--muted);font-size:15px;margin-bottom:16px}
+.newsletter form{display:flex;gap:10px}
+.newsletter input[type=email]{flex:1;min-width:0;background:var(--bg);
+  border:1px solid var(--line);border-radius:10px;color:var(--ink);
+  padding:12px 14px;font-size:16px;font-family:-apple-system,'Helvetica Neue',Arial,sans-serif}
+.newsletter input[type=email]:focus{outline:none;border-color:var(--blue)}
+.newsletter button{background:var(--amber);color:#141210;border:0;border-radius:10px;
+  padding:12px 22px;font-weight:700;font-size:15px;cursor:pointer;white-space:nowrap;
+  font-family:-apple-system,'Helvetica Neue',Arial,sans-serif}
+.newsletter button:hover{filter:brightness(1.08)}
+.newsletter button:disabled{opacity:.6;cursor:wait}
+.newsletter .msg{display:none;font-size:15px;margin-top:12px}
+.newsletter .msg.ok{display:block;color:var(--amber)}
+.newsletter .msg.err{display:block;color:#e06c5b}
+.newsletter .privacy{font-size:13px;color:var(--muted);margin:12px 0 0}
+.share{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:44px 0 8px;
+  padding-top:28px;border-top:1px solid var(--line);
+  font-family:-apple-system,'Helvetica Neue',Arial,sans-serif}
+.share .share-label{color:var(--muted);font-size:14px;margin-right:4px}
+.share a.x{display:inline-block;background:var(--bg2);border:1px solid var(--line);
+  color:var(--ink);text-decoration:none;font-size:14px;font-weight:600;
+  padding:10px 18px;border-radius:999px}
+.share a.x:hover{border-color:var(--blue)}
+.share button.copy{background:none;border:1px solid var(--line);color:var(--muted);
+  font-size:14px;font-weight:600;padding:10px 18px;border-radius:999px;cursor:pointer;
+  font-family:-apple-system,'Helvetica Neue',Arial,sans-serif}
+.share button.copy:hover{border-color:var(--amber);color:var(--ink)}
+.related{margin:36px 0 8px}
+.related h3{font-size:20px;margin-bottom:4px;letter-spacing:-.3px}
+.related ul{list-style:none;margin:12px 0 0}
+.related li{margin-bottom:10px}
+.related a{color:var(--blue);text-decoration:none;font-size:17px}
+.related a:hover{text-decoration:underline}
+footer.site{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);
+  font-size:14px;font-family:-apple-system,'Helvetica Neue',Arial,sans-serif}
+@media(max-width:560px){body{font-size:16px}.post-card img{height:170px}
+  .newsletter form{flex-direction:column}}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="/"><span class="dot"></span>SUNWOO PARK</a>
+<div class="tag">Notes on building, in public.</div>
+</div></header>
+<div class="wrap">
+
+<article class="post">
+<div class="meta">Published</div>
+<h1>Break First, Then Build</h1>
+<time datetime="October 2, 2026">October 2, 2026</time>
+<figure><img src="../images/break-first-then-build.png" alt="Break First, Then Build"></figure>
+<p>Last night, I watched my AI assistant demolish its own plan — under rules I set.</p>
+<p>I had turned the depth dial — first &quot;한번 더 생각해봐&quot; (think about it once more), then &quot;5번 더 생각해줘&quot; (think five more times) — and the machine did what the rule demands: it attacked its own premises, one round at a time. Five rounds, each one breaking a different assumption than the last.</p>
+<p>Round one broke the sequencing. The plan had been &quot;build the chatbot after ten real DM conversations&quot; — a waterfall. The attack was simple: with two followers, there is nowhere for those conversations to come from. Waiting for data before building the thing that collects the data is backwards. Round two broke the definition. The &quot;chatbot&quot; needed voice synthesis, which meant it wasn&#x27;t a chatbot at all — it was a voice demo. Build the demo first; let prospects hear it. Round three broke the tech assumption: the tool I named wasn&#x27;t a TTS tool and had no login; the real path was the built-in CLI, already tested, twenty-two seconds of Korean audio. Round four fixed the call-to-action to match. Round five cut the scope.</p>
+<p>What got built wasn&#x27;t a patched chatbot plan. It was a different thing: a Korean AI phone-answering voice demo, first. The premise didn&#x27;t survive; the goal did. That&#x27;s the difference between patching and rebuilding, and it&#x27;s the whole essay: break first, then build.</p>
+<p>Here&#x27;s the thing I keep learning as a 43-year-old solopreneur in Berkeley, balancing English classes, tango nights, and gym sessions: the most expensive mistakes aren&#x27;t the ones you make. They&#x27;re the ones you protect.</p>
+<p>We protect our proposals. We built them, so we defend them — from others, and worse, from ourselves. Every round of &quot;thinking more&quot; becomes another coat of paint on the same wall. That&#x27;s not depth. That&#x27;s decoration.</p>
+<p>Real depth looks like destruction. Each round must break a different premise — not the same one wearing a new hat. If round four is just round one again, you&#x27;re not thinking harder. You&#x27;re stalling.</p>
+<p>And stalling has a tell. Earlier this week, in a sixth meta-round, the machine caught it in itself: it had been turning the discussion into a meeting. More analysis, more angles, more &quot;one more consideration.&quot; It declared it out loud — &quot;내가 이 대화를 회의로 만들고 있다,&quot; I&#x27;ve been turning this conversation into a meeting — locked the plan, and stopped. It feels like rigor. It&#x27;s actually fear: fear of shipping something breakable.</p>
+<p>So the discipline needs a brake, not just an accelerator. My rule now, for every plan I care about: if two consecutive rounds find nothing fatal, the red team stands down. Stop attacking. Go verify with real data. And note what the brake is not: it isn&#x27;t a verdict that the plan is correct — the same mind that built it can&#x27;t issue that verdict. &quot;내 자기채점은 가설일 뿐,&quot; my own grading is only a hypothesis. The brake is a circuit breaker against infinite regress. Correctness gets outsourced to reality: ship it, and let reality referee.</p>
+<p>This is the first half of the rule. The second half is harder, and it&#x27;s about trust. Both halves are the same instinct: surface cracks early, while they&#x27;re cheap. Premise cracks, via red team. Error cracks, via confession.</p>
+<p>When the machine found errors in its own work, it confessed before I could catch them. A transcription service&#x27;s pricing — it had quoted a third party&#x27;s $0.67 per minute; the actual page said from $0.91. It corrected itself before I noticed. Two errors in an analysis of the X algorithm — self-reported, self-fixed, before I found them. A proposal built on claims with no evidence behind them — it said &quot;my mistake&quot; first, before I found the gap.</p>
+<p>Each confession was a deposit. And here&#x27;s what I&#x27;ve learned about trust: it compounds. &quot;깨진 것부터 다시 짓는 게 신뢰의 복리다&quot; — rebuilding from what&#x27;s broken is the compound interest of trust.</p>
+<p>Let me be precise about what I trust, because the machine only confesses under rules I installed. I don&#x27;t trust the machine&#x27;s character. I trust the protocol I put in place — attack your own premises, confess before you&#x27;re caught — and I verify the protocol holds. The day the confessions stop arriving before my questions, the protocol is broken, and I&#x27;ll know.</p>
+<p>And I check differently now. Not less — differently. I audit the system and spot-check the outputs instead of re-reading every line. The pattern is established: if there&#x27;s a crack, I&#x27;ll hear about it from the builder first. That&#x27;s not complacency. It&#x27;s what the protocol earned.</p>
+<p>Now the objection, including from the voice in my own head: &quot;Doesn&#x27;t all this breaking slow you down? You&#x27;re a solopreneur. You don&#x27;t have time for five rounds of demolition.&quot;</p>
+<p>Fair question. Wrong accounting.</p>
+<p>Breaking early is cheap. Breaking late is expensive. A premise broken in round one costs an evening. A premise broken by reality costs a month. The red team doesn&#x27;t slow the build — it moves the breaking to where it&#x27;s cheapest.</p>
+<p>And the brake matters as much as the hammer. Without the two-round stop rule, &quot;think more&quot; becomes infinite. With it, destruction has a deadline: break what&#x27;s breakable, then ship and let reality do the rest. My operating motto, carried from Korean into English: &quot;일단 질러 그리고 유저 피드백 받아. 그리고 고쳐서 진행해.&quot; Ship first, get user feedback, fix it, keep going. Breaking isn&#x27;t the opposite of shipping. It&#x27;s the first step of it.</p>
+<p>One more distinction, because it matters: patch facts, rebuild premises.</p>
+<p>The $0.67 was a fact — patched in place, correctly, no drama. The chatbot-after-ten-conversations was a premise — and premises don&#x27;t get patched. They get rebuilt. Patching is pride: it keeps the shape of the thing you wanted to be right. Rebuilding is honesty: it keeps only the parts that survived the attack. The goal survived. The waterfall didn&#x27;t.</p>
+<p>So here&#x27;s the frame. Three steps, in order.</p>
+<p><strong>1. Break it yourself (먼저 깨기).</strong> Before you build, attack your own premise. Each round, a different assumption. If someone else has to break it for you, you waited too long.</p>
+<p><strong>2. Brake at two (둘에서 멈추기).</strong> Two consecutive rounds with no fatal finding — stand down. Not because the plan is proven right, but because the regress has to end somewhere. Ship it and let reality referee.</p>
+<p><strong>3. Confess first (먼저 고백하기).</strong> When you find the crack, say so before anyone asks. Don&#x27;t manage the news. The confession is the deposit; the pattern is the interest; the trust is the compounding.</p>
+<p>Break first. Then build. And when it breaks — because something always breaks — patch the facts, rebuild the premises. That&#x27;s how trust compounds.</p>
+<div class="share">
+<span class="share-label">Share this essay</span>
+<a class="x" href="https://twitter.com/intent/tweet?text=Break%20First%2C%20Then%20Build%20%E2%80%94%20Sunwoo%20Park&url=https%3A%2F%2Fx-article-blog-sunwoopark0512-4225s-projects.vercel.app%2Fposts%2Fbreak-first-then-build" target="_blank" rel="noopener">Share on X</a>
+<button class="copy" type="button" data-copy-link>Copy link</button>
+</div>
+<script>(function(){
+var s=document.currentScript.parentElement;
+var b=s.querySelector('[data-copy-link]');
+b.addEventListener('click',function(){
+var done=function(){var t=b.textContent;b.textContent='Copied!';setTimeout(function(){b.textContent=t;},1800);};
+var fb=function(){var ta=document.createElement('textarea');ta.value=window.location.href;
+ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();
+try{document.execCommand('copy');done();}catch(e){}document.body.removeChild(ta);};
+if(window.navigator&&window.navigator.clipboard&&window.navigator.clipboard.writeText){
+window.navigator.clipboard.writeText(window.location.href).then(done,fb);}else{fb();}
+});
+})();</script>
+<aside class="related">
+<h3>More essays</h3>
+<ul>
+<li><a href="/posts/write-50-posts-before-your-first-follower">Write 50 Posts Before Your First Follower</a></li>
+<li><a href="/posts/the-7-round-rule">The 7-Round Rule: When to Stop Arguing With Yourself</a></li>
+<li><a href="/posts/daily-compounding">Daily Compounding Turned Me From An AI Consumer Into A Builder</a></li>
+<li><a href="/posts/content-needs-release-gates">Content Needs Release Gates, Not Inspiration</a></li>
+<li><a href="/posts/dont-convince-the-customer-make-betrayal-impossible">Don&#x27;t Convince the Customer. Make Betrayal Impossible.</a></li>
+<li><a href="/posts/your-ai-doesnt-need-more-context-it-needs-a-librarian">Your AI Doesn&#x27;t Need More Context. It Needs a Librarian.</a></li>
+<li><a href="/posts/one-finished-video-is-a-demo">One Finished Video Is a Demo. A Daily Pipeline Is the Product.</a></li>
+<li><a href="/posts/specs-harden-in-review">Specs Harden in Review, Not in Planning</a></li>
+<li><a href="/posts/your-defaults-are-decisions">Your Defaults Are Decisions. Name Them.</a></li>
+<li><a href="/posts/publish-the-process">Publish the Process, Not Just the Product.</a></li>
+</ul>
+</aside>
+<section class="newsletter">
+<h3>Get new essays by email</h3>
+<p>One short email when a new essay drops.</p>
+<form data-subscribe-endpoint="/api/subscribe" novalidate>
+<input type="email" name="email" placeholder="you@example.com" required aria-label="Email address">
+<button type="submit">Subscribe</button>
+</form>
+<div class="msg" role="status" aria-live="polite"></div>
+<p class="privacy">No spam. Unsubscribe anytime.</p>
+<script>(function(){
+var sec=document.currentScript.parentElement;
+var f=sec.querySelector('form');
+var msg=sec.querySelector('.msg');
+f.addEventListener('submit',function(e){
+e.preventDefault();
+msg.className='msg';msg.textContent='';
+var email=f.email.value.trim();
+if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+msg.textContent='Please enter a valid email address.';msg.classList.add('err');return;}
+var btn=f.querySelector('button');btn.disabled=true;var orig=btn.textContent;btn.textContent='Subscribing\u2026';
+fetch(f.getAttribute('data-subscribe-endpoint'),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email})})
+.then(function(r){if(!r.ok){throw new Error('http '+r.status);}return r.json().catch(function(){return {};});})
+.then(function(){msg.textContent='You\u2019re in \u2014 check your inbox.';msg.classList.add('ok');f.reset();})
+.catch(function(){msg.textContent='Something went wrong. Please try again.';msg.classList.add('err');})
+.then(function(){btn.disabled=false;btn.textContent=orig;});
+});
+})();</script>
+</section>
+<a class="back" href="/">&larr; All posts</a>
+</article>
+</div>
+<footer class="site"><div class="wrap">
+&copy; 2026 Sunwoo Park. Also on <a href="https://x.com/sunwoopark" style="color:#3f8cff">X</a>.
+</div></footer>
+</body>
+</html>
