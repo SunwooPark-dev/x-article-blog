@@ -60,5 +60,26 @@
     <pubDate>Thu, 01 Oct 2026 00:00:00 GMT</pubDate>
     <description>My game prototype passed all 44 tests — but the spec hardened in review, not in planning. Three of Codex's 8 review findings became regression tests. A review comment is advice; a test is enforcement. Specs harden when the weak spot gets a guard.</description>
   </item>
+  <item>
+    <title>Your Defaults Are Decisions. Name Them. — Sunwoo Park</title>
+    <link>https://x-article-blog-sunwoopark0512-4225s-projects.vercel.app/posts/your-defaults-are-decisions</link>
+    <guid>https://x-article-blog-sunwoopark0512-4225s-projects.vercel.app/posts/your-defaults-are-decisions</guid>
+    <pubDate>Fri, 02 Oct 2026 00:00:00 GMT</pubDate>
+    <description>On September 29 I finalized my daily routine v1, and every unmade choice got the same label: “내 기본값.” My default. Naming a default isn't a new decision — it's admitting the one you already made.</description>
+  </item>
+  <item>
+    <title>Publish the Process, Not Just the Product. — Sunwoo Park</title>
+    <link>https://x-article-blog-sunwoopark0512-4225s-projects.vercel.app/posts/publish-the-process</link>
+    <guid>https://x-article-blog-sunwoopark0512-4225s-projects.vercel.app/posts/publish-the-process</guid>
+    <pubDate>Sat, 03 Oct 2026 00:00:00 GMT</pubDate>
+    <description>Marketing is the hardest part — so I publish the process, not just the product. The wins, the rejections, the pending Vercel token. When you have no track record, “watch me try” is a strategy you can start today.</description>
+  </item>
+  <item>
+    <title>Break First, Then Build — Sunwoo Park</title>
+    <link>https://x-article-blog-sunwoopark0512-4225s-projects.vercel.app/posts/break-first-then-build</link>
+    <guid>https://x-article-blog-sunwoopark0512-4225s-projects.vercel.app/posts/break-first-then-build</guid>
+    <pubDate>Fri, 02 Oct 2026 00:00:00 GMT</pubDate>
+    <description>Last night my AI ran five rounds attacking its own plan: the waterfall sequencing broke, the definition broke, the tech assumption broke. What got built wasn’t a patched chatbot plan — it was a voice demo. Break first, then build: patch facts, rebuild premises, and let trust compound.</description>
+  </item>
 </channel>
 </rss>
