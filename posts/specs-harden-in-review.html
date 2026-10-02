@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Specs Harden in Review, Not in Planning — Sunwoo Park</title>
+<meta name="description" content="My game prototype passed all 44 tests — but the spec hardened in review, not in planning. Three of Codex&#x27;s 8 review findings became regression tests. A review comment is advice; a test is enforcement. Specs harden when the weak spot gets a guard.">
+<link rel="canonical" href="https://x-article-blog-sunwoopark0512-4225s-projects.vercel.app/posts/specs-harden-in-review">
+<meta property="og:title" content="Specs Harden in Review, Not in Planning — Sunwoo Park">
+<meta property="og:description" content="My game prototype passed all 44 tests — but the spec hardened in review, not in planning. Three of Codex&#x27;s 8 review findings became regression tests. A review comment is advice; a test is enforcement. Specs harden when the weak spot gets a guard.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://x-article-blog-sunwoopark0512-4225s-projects.vercel.app/posts/specs-harden-in-review">
+<meta property="og:site_name" content="Sunwoo Park — Notes on building">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@sunwoopark">
+<meta name="twitter:title" content="Specs Harden in Review, Not in Planning — Sunwoo Park">
+<meta name="twitter:description" content="My game prototype passed all 44 tests — but the spec hardened in review, not in planning. Three of Codex&#x27;s 8 review findings became regression tests. A review comment is advice; a test is enforcement. Specs harden when the weak spot gets a guard.">
+<meta property="og:image" content="https://x-article-blog-sunwoopark0512-4225s-projects.vercel.app/images/specs-harden-in-review.webp">
+<meta name="twitter:image" content="https://x-article-blog-sunwoopark0512-4225s-projects.vercel.app/images/specs-harden-in-review.webp">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Specs Harden in Review, Not in Planning — Sunwoo Park",
+  "description": "My game prototype passed all 44 tests — but the spec hardened in review, not in planning. Three of Codex's 8 review findings became regression tests. A review comment is advice; a test is enforcement. Specs harden when the weak spot gets a guard.",
+  "datePublished": "2026-10-01",
+  "author": {
+    "@type": "Person",
+    "name": "Sunwoo Park"
+  },
+  "url": "https://x-article-blog-sunwoopark0512-4225s-projects.vercel.app/posts/specs-harden-in-review",
+  "image": "https://x-article-blog-sunwoopark0512-4225s-projects.vercel.app/images/specs-harden-in-review.webp"
+}
+</script>
+<style>
+:root{
+  --bg:#141210; --bg2:#1c1917; --ink:#ece7de; --muted:#a8a094;
+  --blue:#3f8cff; --amber:#e8a33d; --line:#2c2823;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);
+  font-family:Georgia,'Times New Roman',Charter,serif;line-height:1.75;
+  font-size:18px}
+.wrap{max-width:700px;margin:0 auto;padding:0 24px}
+header.site{border-bottom:1px solid var(--line);padding:28px 0}
+header.site .brand{font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;
+  font-weight:800;letter-spacing:3px;font-size:14px;color:var(--ink);
+  text-decoration:none}
+header.site .brand .dot{display:inline-block;width:9px;height:9px;border-radius:50%;
+  background:var(--amber);margin-right:10px}
+header.site .tag{color:var(--muted);font-size:14px;margin-top:6px;
+  font-family:-apple-system,'Helvetica Neue',Arial,sans-serif}
+.hero{padding:56px 0 40px}
+.hero h1{font-size:clamp(34px,6vw,52px);line-height:1.15;letter-spacing:-.5px}
+.hero h1 .acc{color:var(--amber)}
+.hero p{color:var(--muted);margin-top:14px;font-size:17px}
+.post-card{display:block;text-decoration:none;color:inherit;border:1px solid var(--line);
+  border-radius:14px;overflow:hidden;margin-bottom:28px;background:var(--bg2);
+  transition:border-color .2s}
+.post-card:hover{border-color:var(--blue)}
+.post-card img{width:100%;height:220px;object-fit:cover;display:block}
+.post-card .body{padding:22px 24px}
+.post-card h2{font-size:24px;line-height:1.3;margin-bottom:8px}
+.post-card h2 a{color:var(--ink);text-decoration:none}
+.post-card .meta{font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;
+  font-size:12px;letter-spacing:2px;color:var(--amber);text-transform:uppercase;
+  margin-bottom:10px}
+.post-card p{color:var(--muted);font-size:16px}
+article.post{padding:48px 0 64px}
+article.post .meta{font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;
+  font-size:12px;letter-spacing:2px;color:var(--amber);text-transform:uppercase;
+  margin-bottom:14px}
+article.post h1{font-size:clamp(30px,5.5vw,44px);line-height:1.2;
+  letter-spacing:-.5px;margin-bottom:8px}
+article.post time{color:var(--muted);font-size:15px;
+  font-family:-apple-system,'Helvetica Neue',Arial,sans-serif}
+article.post figure{margin:28px 0}
+article.post figure img{width:100%;border-radius:12px;display:block}
+article.post h2{font-size:24px;margin:44px 0 12px;color:var(--ink)}
+article.post p{margin:0 0 20px}
+article.post ul,article.post ol{margin:0 0 20px 24px}
+article.post li{margin-bottom:10px}
+article.post strong{color:#fff}
+article.post em{color:var(--blue)}
+.back{display:inline-block;margin:32px 0 0;color:var(--blue);text-decoration:none;
+  font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;font-size:15px}
+.newsletter{border:1px solid var(--line);border-radius:14px;background:var(--bg2);
+  padding:28px;margin:0 0 36px}
+.newsletter h3{font-size:22px;margin-bottom:6px;letter-spacing:-.3px}
+.newsletter p{color:var(--muted);font-size:15px;margin-bottom:16px}
+.newsletter form{display:flex;gap:10px}
+.newsletter input[type=email]{flex:1;min-width:0;background:var(--bg);
+  border:1px solid var(--line);border-radius:10px;color:var(--ink);
+  padding:12px 14px;font-size:16px;font-family:-apple-system,'Helvetica Neue',Arial,sans-serif}
+.newsletter input[type=email]:focus{outline:none;border-color:var(--blue)}
+.newsletter button{background:var(--amber);color:#141210;border:0;border-radius:10px;
+  padding:12px 22px;font-weight:700;font-size:15px;cursor:pointer;white-space:nowrap;
+  font-family:-apple-system,'Helvetica Neue',Arial,sans-serif}
+.newsletter button:hover{filter:brightness(1.08)}
+.newsletter button:disabled{opacity:.6;cursor:wait}
+.newsletter .msg{display:none;font-size:15px;margin-top:12px}
+.newsletter .msg.ok{display:block;color:var(--amber)}
+.newsletter .msg.err{display:block;color:#e06c5b}
+.newsletter .privacy{font-size:13px;color:var(--muted);margin:12px 0 0}
+.share{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:44px 0 8px;
+  padding-top:28px;border-top:1px solid var(--line);
+  font-family:-apple-system,'Helvetica Neue',Arial,sans-serif}
+.share .share-label{color:var(--muted);font-size:14px;margin-right:4px}
+.share a.x{display:inline-block;background:var(--bg2);border:1px solid var(--line);
+  color:var(--ink);text-decoration:none;font-size:14px;font-weight:600;
+  padding:10px 18px;border-radius:999px}
+.share a.x:hover{border-color:var(--blue)}
+.share button.copy{background:none;border:1px solid var(--line);color:var(--muted);
+  font-size:14px;font-weight:600;padding:10px 18px;border-radius:999px;cursor:pointer;
+  font-family:-apple-system,'Helvetica Neue',Arial,sans-serif}
+.share button.copy:hover{border-color:var(--amber);color:var(--ink)}
+.related{margin:36px 0 8px}
+.related h3{font-size:20px;margin-bottom:4px;letter-spacing:-.3px}
+.related ul{list-style:none;margin:12px 0 0}
+.related li{margin-bottom:10px}
+.related a{color:var(--blue);text-decoration:none;font-size:17px}
+.related a:hover{text-decoration:underline}
+footer.site{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);
+  font-size:14px;font-family:-apple-system,'Helvetica Neue',Arial,sans-serif}
+@media(max-width:560px){body{font-size:16px}.post-card img{height:170px}
+  .newsletter form{flex-direction:column}}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="/"><span class="dot"></span>SUNWOO PARK</a>
+<div class="tag">Notes on building, in public.</div>
+</div></header>
+<div class="wrap">
+
+<article class="post">
+<div class="meta">Published</div>
+<h1>Specs Harden in Review, Not in Planning</h1>
+<time datetime="October 1, 2026">October 1, 2026</time>
+<figure><img src="../images/specs-harden-in-review.webp" alt="Specs Harden in Review, Not in Planning"></figure>
+<p>This morning, my game prototype passed all 44 of its tests.</p>
+<p>The game is &quot;도룡제자: 강호육성기&quot; (Dragon Disciple: Raising a Jianghu Hero) — a training sim in the spirit of Princess Maker 2 crossed with Romance of the Three Kingdoms XI. 511 lines of game logic, 423 lines of UI. The design document was done and &quot;final.&quot; The tests verify the code against the document — one test is literally named &quot;initial state matches the design doc exactly&quot; (초기 상태가 기획서와 정확히 같다). All 44 passed.</p>
+<p>So the spec was done, right? The words were final, the code matched the words, the tests confirmed the match.</p>
+<p>Not quite. Between the document and the tests, something else happened: a review.</p>
+<p>I work in a fixed division of labor. Codex writes the implementation instructions; I implement and verify. Then Codex reviews my implementation — a second mind that never saw my assumptions. It found 8 issues: 6 warnings, 2 suggestions. Public constants that should have been immutable. A stat-change function with no input validation. An event-choice resolver that never checked whether that choice was even eligible to fire. A modal that left the player stuck if it failed to open.</p>
+<p>Notice what these have in common: the design doc never thought to forbid them. In the doc, TUNING was just a table of numbers. Nothing said &quot;these must never change at runtime&quot; — why would it? A plan describes intent, not betrayal scenarios. The reviewer asked the betrayal question: what happens if something mutates these mid-game? The answer was &quot;everything downstream silently corrupts.&quot; No plan enumerates every betrayal. That&#x27;s a review-shaped discovery — a mind that didn&#x27;t share your assumptions, asking what you never thought to forbid.</p>
+<p>I fixed all 8. And here&#x27;s the part that matters: three of those fixes didn&#x27;t just land in the code. They became tests.</p>
+<p>&quot;Public constants (TUNING·TRAININGS·ENDINGS·EVENT_PRIORITY) are immutable&quot; — that&#x27;s a test now. &quot;changeStat and changeNature ignore bad input without corrupting state&quot; — a test. &quot;Invalid choice IDs are rejected without losing the event&quot; — a test. A reviewer&#x27;s comment became a check that fails the build if anyone reintroduces the bug.</p>
+<p>This is the step most teams skip. The normal flow is: reviewer points, author fixes, everyone moves on. The comment rots in a thread. Six months later the same bug comes back wearing a different hat, because nothing in the codebase remembers the lesson. The fix was applied to the code. It was never applied to the spec.</p>
+<p>Turning the comment into a test applies it to the spec. The spec is no longer just the document&#x27;s words — it&#x27;s the words plus the guards. My design doc didn&#x27;t change that day. It gained teeth.</p>
+<p>An honest boundary, and I&#x27;ll name it: the test suite only covers game logic. It runs with no DOM at all, so the modal fix — the fourth one — lives outside it. No test guards that door. A guard you pretend to have is worse than a gap you admit, because the pretense stops you from watching the gap.</p>
+<p>So here&#x27;s the frame. Planning writes the spec&#x27;s first draft. Tests check the draft against the code. But the spec hardens in review — at the exact moment a reviewer&#x27;s finding stops being advice and starts being enforcement. A comment says &quot;this should be immutable.&quot; A test makes it immutable, every run, or the build breaks.</p>
+<p>Most review processes end at the fix. Mine ends one step later: the sharpest findings get encoded. The review never really ends — it just runs quietly, 44 checks at a time.</p>
+<p>A plan is a guess with formatting. A review comment is advice. A test is enforcement. Specs harden when the weak spot gets a guard.</p>
+<div class="share">
+<span class="share-label">Share this essay</span>
+<a class="x" href="https://twitter.com/intent/tweet?text=Specs%20Harden%20in%20Review%2C%20Not%20in%20Planning%20%E2%80%94%20Sunwoo%20Park&url=https%3A%2F%2Fx-article-blog-sunwoopark0512-4225s-projects.vercel.app%2Fposts%2Fspecs-harden-in-review" target="_blank" rel="noopener">Share on X</a>
+<button class="copy" type="button" data-copy-link>Copy link</button>
+</div>
+<script>(function(){
+var s=document.currentScript.parentElement;
+var b=s.querySelector('[data-copy-link]');
+b.addEventListener('click',function(){
+var done=function(){var t=b.textContent;b.textContent='Copied!';setTimeout(function(){b.textContent=t;},1800);};
+var fb=function(){var ta=document.createElement('textarea');ta.value=window.location.href;
+ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();
+try{document.execCommand('copy');done();}catch(e){}document.body.removeChild(ta);};
+if(window.navigator&&window.navigator.clipboard&&window.navigator.clipboard.writeText){
+window.navigator.clipboard.writeText(window.location.href).then(done,fb);}else{fb();}
+});
+})();</script>
+<aside class="related">
+<h3>More essays</h3>
+<ul>
+<li><a href="/posts/write-50-posts-before-your-first-follower">Write 50 Posts Before Your First Follower</a></li>
+<li><a href="/posts/the-7-round-rule">The 7-Round Rule: When to Stop Arguing With Yourself</a></li>
+<li><a href="/posts/daily-compounding">Daily Compounding Turned Me From An AI Consumer Into A Builder</a></li>
+<li><a href="/posts/content-needs-release-gates">Content Needs Release Gates, Not Inspiration</a></li>
+<li><a href="/posts/dont-convince-the-customer-make-betrayal-impossible">Don&#x27;t Convince the Customer. Make Betrayal Impossible.</a></li>
+<li><a href="/posts/your-ai-doesnt-need-more-context-it-needs-a-librarian">Your AI Doesn&#x27;t Need More Context. It Needs a Librarian.</a></li>
+<li><a href="/posts/one-finished-video-is-a-demo">One Finished Video Is a Demo. A Daily Pipeline Is the Product.</a></li>
+</ul>
+</aside>
+<section class="newsletter">
+<h3>Get new essays by email</h3>
+<p>One short email when a new essay drops.</p>
+<form data-subscribe-endpoint="/api/subscribe" novalidate>
+<input type="email" name="email" placeholder="you@example.com" required aria-label="Email address">
+<button type="submit">Subscribe</button>
+</form>
+<div class="msg" role="status" aria-live="polite"></div>
+<p class="privacy">No spam. Unsubscribe anytime.</p>
+<script>(function(){
+var sec=document.currentScript.parentElement;
+var f=sec.querySelector('form');
+var msg=sec.querySelector('.msg');
+f.addEventListener('submit',function(e){
+e.preventDefault();
+msg.className='msg';msg.textContent='';
+var email=f.email.value.trim();
+if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+msg.textContent='Please enter a valid email address.';msg.classList.add('err');return;}
+var btn=f.querySelector('button');btn.disabled=true;var orig=btn.textContent;btn.textContent='Subscribing\u2026';
+fetch(f.getAttribute('data-subscribe-endpoint'),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email})})
+.then(function(r){if(!r.ok){throw new Error('http '+r.status);}return r.json().catch(function(){return {};});})
+.then(function(){msg.textContent='You\u2019re in \u2014 check your inbox.';msg.classList.add('ok');f.reset();})
+.catch(function(){msg.textContent='Something went wrong. Please try again.';msg.classList.add('err');})
+.then(function(){btn.disabled=false;btn.textContent=orig;});
+});
+})();</script>
+</section>
+<a class="back" href="/">&larr; All posts</a>
+</article>
+</div>
+<footer class="site"><div class="wrap">
+&copy; 2026 Sunwoo Park. Also on <a href="https://x.com/sunwoopark" style="color:#3f8cff">X</a>.
+</div></footer>
+</body>
+</html>
